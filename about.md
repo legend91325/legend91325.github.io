@@ -2,18 +2,14 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+## 个人简介:
 
-<p>这篇文章算对一段时间的回溯，作为一个技术者来说，写的东西不多，
-特意查了下我是重14年底开始尝试写博文的，那时候自己没啥储备，都不知道些写点什么。
-感觉写出来会被别人看到，就感觉特牛掰。特意跑去阿里云查了下，我的第一个域名购买记录是15年1月份</p>
+<p>90后码农一只，现在北京就职，服务器后端开发，主JAVA，Python,Scala也可以搞搞。
+热爱自己的行业，技术上有很多不懂，需要学习的有很多，程序如人生慢慢修行，勿骄勿躁。</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{% highlight raw %}
+花开花落，各有缘由，保留初心，快乐生长。
+{% endhighlight %}
 
 <h2>Skills</h2>
 
@@ -33,6 +29,4 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 <ul>
 	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
 </ul>
