@@ -6,10 +6,11 @@ layout: page
 ### **服务器后端开发·[北京量化派](http://www.quantgroup.cn/)**
 
 ### **男·91年·本科·北京** 
-
+<div class="social-links">
 <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}">
     <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
 </a>
+</div>
 
 ## 工作经历
 
