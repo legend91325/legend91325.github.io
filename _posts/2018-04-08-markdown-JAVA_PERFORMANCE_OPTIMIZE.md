@@ -73,3 +73,40 @@ public static void main(String[] args) throws IOException{
 }
 ```
 
+#### 时间换空间 、空间换时间
+> 时间换空间
+```
+a = a+b;
+b = a-b;
+a = a-b;
+```
+> 空间换时间
+```
+//下标索引 用空间排序 时间复杂度O(n)
+public static void spaceTotime(int[] array){
+    int i = 0;
+    int max = array[0];
+    int length = array.length;
+    for(int i=1;i<length;i++){
+       if(array[i]>max){
+           max = array[i]
+       }    
+    }
+    //根据最大值分配长度
+    int[] temp = new int[max+1]
+    for(int i=0;i<length;i++){
+        temp[array[i]] += 1; 
+    }
+    for(int j=0;j<max+1;j++){
+        if(temp[j]>0){
+            for(int m=0;m<temp[j];m++){
+                System.out.println(j)
+             }
+        }
+    }
+}
+
+```
+
+## Java程序优化
+
