@@ -64,7 +64,7 @@ layout: page
 
 > 益动APP是运动爱好者互动平台和app
 参与项目的整个开发，从项目的第一行代码 到目前 整个过程。
-工作中使用涉及到的框架及工具有 Mybatis, Spring MVC,Redis,Mongo,Zookeeper,dubbo,RabbitMQ。
+工作中使用涉及到的框架及工具有 Mybatis, Spring MVC,Redis,Mongo,Zookeeper,dubbo,RabbitMQ,ES。
 数据存储分布在Mysql,Redis,Mongodb
 接口有涉及客户端（ios android）以及网站
 

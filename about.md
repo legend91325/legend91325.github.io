@@ -30,12 +30,29 @@ layout: page
 
 <ul>
 	<li>
+	<a href="https://book.douban.com/subject/10484692/">Java并发编程实战</a>
+	<p>值得反复研读，虽然不厚，但是能对JAVA有不少的提升以及扩展</p>
+	</li>
+	<li>
+    <a href="https://book.douban.com/subject/24722612/">深入理解Java虚拟机</a>
+     <p>带你进入JAVA JVM的世界，Stop the world 怎么来的 笑哭</p>
+     </li>
+	<li>
+	<li>
+    <a href="https://book.douban.com/subject/26663605/">实战Java高并发程序设计</a>
+     <p>这本书更多的偏代码，书内容不难，但还蛮有用的，可以当做工具书来看吧</p>
+     </li>
+    <li>
 	<a href="https://book.douban.com/subject/19971952/">快学Scala</a>
-	<p>我的Scala入门书籍，希望你能帮助你敲开这扇门</p>
+	<p>我的Scala入门书籍，希望也能帮助你敲开这扇门</p>
 	</li>
 	<li>
 	<a href="https://book.douban.com/subject/26337727/">算法设计与分析基础</a>
 	<p>想称为一名开发大牛，算法也是必不可少的，这本书对我来说是为数不多好啃的算法书。</p>
+	</li>
+	<li>
+	<a href="https://book.douban.com/subject/26899701/">普林斯顿微积分读本</a>
+	<p>工作多年之后，靠着这本书又捡起了一些微积分的知识，如果大学就知道这本书就好了。</p>
 	</li>
 	<li>
 	<a href="https://book.douban.com/subject/4913064/">活着</a>
