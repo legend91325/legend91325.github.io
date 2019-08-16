@@ -7,7 +7,6 @@ headerImage: false
 tag:
 - Java
 - optimize
-star: true
 category: blog
 author: wukong
 description: Java performance optimize
