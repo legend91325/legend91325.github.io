@@ -38,7 +38,6 @@ layout: page
      <p>带你进入JAVA JVM的世界，Stop the world 怎么来的 笑哭</p>
      </li>
 	<li>
-	<li>
     <a href="https://book.douban.com/subject/26663605/">实战Java高并发程序设计</a>
      <p>这本书更多的偏代码，书内容不难，但还蛮有用的，可以当做工具书来看吧</p>
      </li>
