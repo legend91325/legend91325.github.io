@@ -8,6 +8,7 @@ tag:
 - markdown
 - elements
 category: blog
+hidden: true
 author: johndoe
 description: Markdown summary with different options
 # hidden: true 
