@@ -6,7 +6,6 @@ image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - Java
-- optimize
 star: true
 category: blog
 author: wukong

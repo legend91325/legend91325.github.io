@@ -1,13 +1,11 @@
 ---
 title: "带你理解https"
 layout: post
-date: 2016-04-08 21:48
+date: 2015-08-05 21:48
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - https
-- optimize
-star: true
 category: blog
 author: wukong
 description: understand https

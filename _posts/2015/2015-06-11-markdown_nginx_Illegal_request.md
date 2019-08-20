@@ -1,3 +1,17 @@
+---
+title: "配置nginx 抵御不合法请求"
+layout: post
+date: 2015-06-11 17:25
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- nginx
+- history note
+category: blog
+author: wukong
+description: nginx
+---
+
 # 通过配置nginx  抵御不合法请求
 
 标签（空格分隔）： nginx

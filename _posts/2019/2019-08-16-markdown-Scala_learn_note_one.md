@@ -5,7 +5,7 @@ date: 2019-08-16 15:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- Scala
+- scala
 - learning note
 category: blog
 author: wukong

@@ -6,7 +6,6 @@ image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - wukong
-- retorspect
 category: blog
 author: wukong
 description: 过去一段时期关于自己技术成长的回顾 
