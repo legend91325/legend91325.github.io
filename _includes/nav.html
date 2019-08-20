@@ -1,5 +1,4 @@
-<!--<nav class="{% if page.title == "Home" %}nav-home{% else %}nav{% endif %}">-->
-<nav class="nav-home">
+<nav class="{% if page.title == "Home" or page.title == "Blog" %}nav-home{% else %}nav{% endif %}">
     <ul class="list">
         {% if page.title != "Home" %}
             <li class="item">
