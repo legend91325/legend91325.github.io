@@ -1,4 +1,15 @@
-#弹性分布式数据集（上篇）
+---
+title: "弹性分布式数据集（上篇）"
+layout: post
+date: 2019-08-26 00:00
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- spark
+category: blog
+author: wukong
+description: RDDs
+---
 
 ##摘要
 我们提供了弹性分布式数据集(RDDs),一个抽象的分布式内存，用来帮助程序员能在大规模集群中以一种容错的方式进行内存计算。
