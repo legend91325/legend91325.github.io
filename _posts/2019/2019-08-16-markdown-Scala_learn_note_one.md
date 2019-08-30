@@ -1,5 +1,5 @@
 ---
-title: "快学Scala学习笔记【一】"
+title: "快学Scala学习笔记"
 layout: post
 date: 2019-08-16 15:00
 image: /assets/images/markdown.jpg
@@ -240,3 +240,71 @@ Array(100)
 //调用构造器this(100),结果是Array[Nothing],包含了100个null元素
 new Array(100)
 ```
+
+### 第七章 包和引入
+
+同一个包可以定义在多个文件中。你也可以在同一个文件当中为多个包贡献内容
+>源文件的目录和包之间并没有强制的关联关系。你不需要将Employye.scala和Manager.scala放在com/horstmann/impatient目录当中。
+```scala
+package  com {
+    package horstmann{
+        package impatient {
+            class Employee
+              ...
+        }
+    }
+}
+
+package org{
+    package bigjava{
+        class Counter
+          ...
+    }
+}
+```
+
+文件顶部标记法
+
+除了我们到目前为止看到的嵌套标记法外，你也可以在文件顶部使用package语句，不带花括号。例如：
+```scala
+package com.horstmann.impatient
+package people
+class  Person
+...
+```
+等同于
+```scala
+package com.horsmann.impatient{
+    package people{
+        class Person
+          ...
+    }
+}
+```
+
+任何地方都可以声明引入
+
+在Scala中，import语句可以出现在任何地方，并不仅限于文件顶部。import语句的效果一直眼神到包含该语句的块末尾。例如：
+```scala
+class Manager{
+    jimport scala.collection.mutable._
+    val subordinates = new ArrayBuffer[Emplyee]
+}
+```
+重命名和隐藏方法
+```scala
+//部分引用 选取器
+import java.awt.{Color,Font}
+//重命名
+import java.util.{HashMap => JavaHashMap}
+```
+
+隐式引用
+```scala
+//这种引用被允许可以覆盖之前的引用
+import java.lang._
+import scala._
+import Predef._
+```
+
+### 第八章 继承
