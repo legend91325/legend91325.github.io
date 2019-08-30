@@ -245,6 +245,7 @@ new Array(100)
 
 同一个包可以定义在多个文件中。你也可以在同一个文件当中为多个包贡献内容
 >源文件的目录和包之间并没有强制的关联关系。你不需要将Employye.scala和Manager.scala放在com/horstmann/impatient目录当中。
+
 ```scala
 package  com {
     package horstmann{
@@ -266,6 +267,7 @@ package org{
 文件顶部标记法
 
 除了我们到目前为止看到的嵌套标记法外，你也可以在文件顶部使用package语句，不带花括号。例如：
+
 ```scala
 package com.horstmann.impatient
 package people
