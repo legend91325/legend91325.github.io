@@ -162,3 +162,81 @@ Scala中，类并不声明public，Scala源文件中可以包含多个类，所�
 对于类私有的字段，Scala生成私有的getter和setter方法。但对于对象私有的字段，Scala根本不会生成getter或setter方法。
 
 标注@BeanProperty，自动生成Java的getXX/setXX方法。
+
+辅助构造器
+1. 辅助构造器的名称为this。
+2. 每一个辅助构造器都必须以一个对先前已定义的其他辅助狗扎起或主构造器的调用开始。
+
+主构造器
+在Scala中，每个类都有主构造器。主构造器并不以this方法定义，而是与类定义交织在一起。
+如果没有显示仪定义，则自动有用一个无参的主构造器。
+1. 主构造器的参数直接放置在类名之后。
+2. 主构造器会执行类的定义中的所有语句。
+
+>如果主构造器的表示法让你困惑，你不需要使用它。你只要按照常规的做法提供一个或多个辅助构造器即可，不过要记得调用this()，如果你不和其他辅助构造器串接的话。
+话虽如此，许多程序员还是喜欢主构造器这种精简的写法，Martin Odersky 建议这样来看待主构造器：在Scala中，类也接收参数，就像方法一样。
+
+嵌套类，在Scala中你几乎可以在任何语法结构中内嵌任何语法结构。
+```scala
+//scala中每个NetWork实例都有她自己的Member类
+class NetWork {
+   class Member(val name:String){
+    val contacts = new ArrayBuffer[Member]
+   }
+   
+   private val members = new ArrayBuffer[Member]
+   
+   def join(name:String) = {
+        val m = new Member(name)
+        members += m
+        m
+   }
+}
+```
+//不同的NetWork实例的Member不能互相复制，因为不是相同的Member类。
+解决方式
+1. 伴生对象中定义
+```scala
+object Network{
+    class Member(val name:String){
+        val contacts = new ArrayBuffer[Member]
+    }
+}
+class NetWork{
+      ...
+}
+```
+
+2. 类型投影
+```scala
+class Network{
+    class Member(val name:String){
+        val contacts = new ArrayBuffer[Network#Member]
+    }
+}
+```
+
+
+### 第六章 对象
+
+单例对象
+
+scala没有静态方法和静态字段，你可以用object这个语法结构来达到同样的目的。
+对象定义了某个类的单个实例，包含了你想要的特性。对象的构造器在改对象第一次使用的时候被调用。
+>对象本质上可以拥有类的所有特性----它甚至可以扩展其他类或特质，只有一个例外：不能提供构造器参数。
+
+伴生对象
+
+类和它的伴生对象可以相互访问私有特性。它们必须存在同一个源文件中。
+
+扩展类或特质的对象
+
+一个object可以扩展类以及一个或多个特质，其结果是一个扩展了指定类以及特质的类的对象，同时拥有在对象定义中给出的所有特性。
+
+apply方法
+```scala
+//调用的是apply(100),输出一个单元素（整数100）的Array[Int];
+Array(100) 
+//调用构造器this(100),结果是Array[Nothing],包含了100个null元素
+new Array(100)
+```
