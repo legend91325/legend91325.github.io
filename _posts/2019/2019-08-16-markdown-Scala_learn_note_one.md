@@ -310,3 +310,40 @@ import Predef._
 ```
 
 ### 第八章 继承
+
+在Scala中重写一个非抽象方法必须使用override修饰符
+
+类型检查和转换
+要判断某个对象是否属于某个给定的类，可以用isInstanceOf方法。如果测试成功，你就可以用asInstanceOf方法将引用转换为子类的引用：
+```scala
+if (p.isInstanceOf[Employye]){
+    val s = p.asInstanceOf[Employee]
+      ...
+}
+```
+
+如果相判断p指向的是一个Employee对象 但又不是其子类的话，可以用：
+```scala
+if (p.getClass == classOf[Employee])
+```
+
+> 子类的辅助构造器永远都不可能直接调用超类的构造器，子类的辅助构造器最终都会调用主构造器。
+只有主构造器可以调用超类的构造器。
+
+```scala
+//scala写法
+class Employee(name:String,age:Int,val salary:Double) extends Person(name,age)
+//等同于java写法
+public class Employee extends Person {
+    private double salary;
+    public Employee(String name,int age,double salary){
+        super(name,age);
+        this.salary = salary;
+    }
+}
+```
+
+重写字段
+- def只能重写另一个def
+- val只能重写另一个val或不带参数的def
+- var只能重写另一个抽象的var
