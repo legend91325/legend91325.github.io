@@ -347,3 +347,21 @@ public class Employee extends Person {
 - def只能重写另一个def
 - val只能重写另一个val或不带参数的def
 - var只能重写另一个抽象的var
+
+
+Scala继承层级
+
+基本类型以及Unit类型扩展至AnyVal,所有其他类都是AnyRef的子类, AnyVal和AnyRef都是扩展自Any类，Any类是整个继承层级的根节点。
+AnyRef追加了来自Object类的监视方法wait和notify/notifyAll同时提供一个带函数参数的方法synchronized。 
+
+继承级另外一端是Nothin和Null类型。
+Null类型的唯一实例是null值。你可以将null赋值给任何引用，单不能赋值给值类型。举例来说，我们不能讲Int设为null。这比Java更好，在Java中我们可以将Integer包装类引用设为null.
+Nothing类型没有实例。它对泛型结构时常有用。
+
+
+### 第九章 文件和正则表达式
+空 都易于理解
+
+### 第十章 特质
+
+当做接口使用的特质
