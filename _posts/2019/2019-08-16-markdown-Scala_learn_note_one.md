@@ -365,3 +365,134 @@ Nothing类型没有实例。它对泛型结构时常有用。
 ### 第十章 特质
 
 当做接口使用的特质
+
+你不需要将方法声明为abstract特质中未被实现的方法默认就是抽象的。
+和Java一样，Scala只能有一个超类，但可以有任意数量的特质。
+```scala
+trait Logger {
+    def log(msg:String)
+}
+class ConsoleLogger extends Logger{ 
+    //不需要写override
+    def log(msg: String){
+        println(msg)
+    }
+}
+
+//如果特质混入另一个特质，其中抽象方法log,需要调用super.log 则需要标记。
+trait TimestampLogger extends Logger {
+    abstract override def log(msg: String){
+        super.log(new java.util.Date() + "" + msg)
+    }
+}
+
+
+```
+
+带有具体实现的特质
+>让特质拥有具体的方法存在一个弊端，当特质改变是，所有混入了改特质的类都必须重新编译。
+
+
+带有特质的对象
+```scala
+trait Logged{
+    //log 什么也没做
+    def log(msg:String){
+    
+    }
+}
+
+//现在 SavingsAccount 什么都不会被记录到日志中，看上去似乎毫无意义
+//但是你可以在构造具体对象的时候“混入”一个更好的日志记录器的实现。
+class SavingsAccount extends Account with Logged{
+    def withdraw(amount:Double){
+        if(amount > balance) log("Insufficient funds")
+        else   ...
+    }
+}
+
+trait ConsoleLogger extends Logged{
+    override def log(msg :String){
+        println(msg)
+    }
+}
+
+//你可以再构造对象的时候加入特质
+val acct = new SavingsAccount with ConsoleLogger
+//另一个对象可以加入不同的特质
+val acct2 = new SavingsAccount with FileLogger
+```
+
+叠加在一起的特质
+
+特质上，super调用的是特质层级中的下一个特质，具体是哪一个，要根据特质添加的顺序来决定。
+一般来说，特质从最后一个开始被处理。
+
+>对特质而言，你无法从源码判断super.someMethod会执行哪里的方法。确切的方法依赖于使用这些特质的对象或类给出的顺序。
+这使得super相比在传统的继承关系中要灵活得多。
+
+>如果你需要控制具体是哪一个特质的方法被调用，则可以在方括号中给出名称: super[ConsoleLogger].log(...)。
+这里给出的类型必须是直接超类型；你无法使用继承层级中更远的特质或类。
+
+
+特质中具体字段
+
+特质中的字段可以是具体的，也可以是抽象的。如果你给出了初始值，那么字段就是具体的。
+通常对于特质中的每一个具体字段，使用该特质的类都会获得一个字段与之对应。
+这些字段不是被继承的；它们只是简单地加到了子类当中。
+看上去是个席位的差别，单这个区别很重要。
+```scala
+trait ShortLogger extends Logged{
+    val maxLength = 15 //具体字段
+}
+
+class Account {
+    var balance = 0.0
+}
+
+class SavingsAccount extends Account with ConsoleLogger with ShortLogger {
+    var interest = 0.0
+    def withdraw(amount:Double){
+        if(amount >balance) log("Insufficeent funds")
+        else   ...
+    }
+}
+
+//其中子类字段 interest , maxLength
+// 超类字段 balance
+```
+在JVM中，一个类智能扩展一个超类，因此来自特质的字段不能以相同的方式继承。
+由于这个限制，maxLength被直接加到了SavingsAccount类中，跟interest字段排在一起。
+你可以把具体的特质字段当做是针对使用该特质的类的“装配指令”。
+任何通过这种方式被混入的字段都自动成为该类自己的字段。
+
+特质中的抽象字段
+
+>特质中的未被初始化的字段在具体的子类中必须被重写。
+
+特质的构造顺序
+
+- 首先调用超类的构造器
+- 特质构造器在超类构造器之后，类构造器之前执行。
+- 特质由左到右被构造。
+- 每个特质当中，父特质先被构造。
+- 如果多个特质公有一个父特质，而那个父特质已经被构造，则不会被再次构造。
+- 所有特质构造完毕，子类被构造。
+
+```scala
+class SavingsAccount extends Account with FileLogger with ShortLogger
+```
+构造顺序
+1. Account(超类)
+2. Logger(第一个特质的父特质)
+3. FileLogger (第一个特质)
+4. ShortLogger(第二个特质)。注意它的父特质Logger已被构造
+5. SavingsAccount(类)
+
+构造器的顺序是类的线性化的反向。
+如果C extends C1 with C2 with ...with Cn 则 linc(C) = C>> lin(Cn) >> ...>>lin(C2) >> lin(C1)
+这里 >> 意思是 串联并去掉重复项，右侧胜出。
+lin(SavingsAccount) = SavingsAccount >> lin(ShortLogger) >> lin(FileLogger) >> lin(Account)
+                    = SavingsAccount >> (ShortLogger >> Logger) >> (FileLogger >> Logger) >> lin(Account)
+                    = SavingsAccount >> ShortLogger >> FileLogger >> Logger >> Account
+                    (省略了线性化末端类型：ScalaObject、AnyRef、Any)
