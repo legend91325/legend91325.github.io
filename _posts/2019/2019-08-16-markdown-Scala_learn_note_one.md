@@ -490,9 +490,20 @@ class SavingsAccount extends Account with FileLogger with ShortLogger
 5. SavingsAccount(类)
 
 构造器的顺序是类的线性化的反向。
+```scala
 如果C extends C1 with C2 with ...with Cn 则 linc(C) = C>> lin(Cn) >> ...>>lin(C2) >> lin(C1)
+```
+
 这里 >> 意思是 串联并去掉重复项，右侧胜出。
+
+```scala
 lin(SavingsAccount) = SavingsAccount >> lin(ShortLogger) >> lin(FileLogger) >> lin(Account)
                     = SavingsAccount >> (ShortLogger >> Logger) >> (FileLogger >> Logger) >> lin(Account)
                     = SavingsAccount >> ShortLogger >> FileLogger >> Logger >> Account
                     (省略了线性化末端类型：ScalaObject、AnyRef、Any)
+
+```
+                    
+                    
+初始化特质中的字段
+>特质不能有构造器参数。每个特质都有一个无参数的构造器，缺少构造器参数是特质与类之间唯一的技术差别。
