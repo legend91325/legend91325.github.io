@@ -507,3 +507,62 @@ lin(SavingsAccount) = SavingsAccount >> lin(ShortLogger) >> lin(FileLogger) >> l
                     
 初始化特质中的字段
 >特质不能有构造器参数。每个特质都有一个无参数的构造器，缺少构造器参数是特质与类之间唯一的技术差别。
+
+
+扩展类的特质
+特质也可以扩展类，这个类将会自动成为所有混入该特质的超类
+```scala
+trait LoggedException extends Exception with Logged{
+    def log(){
+        log(getMessage())
+    }
+}
+```
+如果一个类已经扩展了另一个类同时混入其他特质，扩展的类的超类必须是混入的特质的超类的子类。 否则不可以混入特质。
+
+自身类型
+```scala
+// 没有扩展Exception类，但是有个自身类型Exception. 意味着，它只能混入Excetpion的子类。
+trait LoggedException extends Logged {
+    this: Exception => def log() {log(getMessage())}
+}
+```
+带有自身类型的特质和带有超类型的特质很相似。两种情况都能确保混入该特质的类能够使用某个特定类型的特性。
+
+```scala
+//自身类型也同样可以处理结构类型（structural type） 这种类型只给出类必须拥有的方法，而不是类的名称。
+trait LoggedException extends Logged{
+    this: {
+        def getMessage(): String
+    } => def log(){
+        log(getMessage())
+    }
+}
+```
+
+### 第十一章 操作符 
+空 都易于理解
+
+### 第十二章 高阶函数 
+
+高阶函数： 接收函数参数的函数。
+
+闭包
+
+在Scala中，你可以再任何地方作用域内定义函数：包，类甚至是另一个函数或方法。
+在函数体内，你可以访问到相应作用域内的任何变量。你的函数可以在变量不再处于作用域内时被调用。
+```scala
+def mulBy(factor:Double) = (x:Double) => factor * x
+val triple = mulBy(3)
+val half = mulBy(0.5)
+//单一你 42  7 
+//每一个返回的函数都有自己的factor设置
+println(triple(14) + "" + half(14))
+```
+
+柯里化
+
+柯里化（currying,以逻辑学家Haskell Brooks Curry的名字命名）指的是将原来接收两个参数的函数变成新的接收一个参数的函数过程。
+新的函数返回一个以原有第二个参数作为参数的函数。
+
+
