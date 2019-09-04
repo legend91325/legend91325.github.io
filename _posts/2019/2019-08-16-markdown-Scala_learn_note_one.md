@@ -1,5 +1,5 @@
 ---
-title: "快学Scala学习笔记"
+title: "《快学Scala》学习笔记"
 layout: post
 date: 2019-08-16 15:00
 image: /assets/images/markdown.jpg
@@ -565,4 +565,71 @@ println(triple(14) + "" + half(14))
 柯里化（currying,以逻辑学家Haskell Brooks Curry的名字命名）指的是将原来接收两个参数的函数变成新的接收一个参数的函数过程。
 新的函数返回一个以原有第二个参数作为参数的函数。
 
+```scala
+def mulOneAtATime(x:Int) = (y: Int) => x * y
+//简写
+def mulOneAtATime(x: Int) (y: Int) = x * y
+```
 
+### 第十三章 集合
+
+Scala 同时支持可变的和不可变的集合。不可变的集合从不改变，因此你可以安全地共享其引用。
+
+Scala优先采用不可变集合。 
+
+列表
+
+在Scala中，列表要么是Nil(空表)，要么是一个head元素加上一个tail，而tail又是一个列表。
+```scala
+val digits = List(4,2)
+// digits.head的值是4，而digits.tail是List(2)。再进一步 digits.tail.head是2，而digits.tail.tail是Nil
+
+//::操作符 从给定的头和尾创建一个新的列表。
+9 :: List(4,2)
+9 :: 4 :: 2 :: Nil
+```
+
+流
+
+Scala提供了一个流式功能，流式一个尾部被懒计算的不可变列表--也就是说，只有当倪需要时它才会被计算。
+```scala
+def numsFrom(n: BigInt): Stream[BigInt] = n #:: numsFrom(n+1)
+// #:: 操作符构建出来的是一个流
+val squares = numsFrom(1).map(x => x * x)
+//将产出 stream(1,?)
+//如果你想得到多个答案，则可以调用take，然后用force，这将强制对所有值求值。
+squares.take(5).force
+//将产生Stream(1,4,9,16,25)
+```
+
+>流不同于迭代器，流将缓存访问过的行，允许你重新访问它们
+
+懒视图
+
+```scala
+val powers = (0 until 1000).view.map(pow(10,_))
+```
+和流不同，懒视图不缓存任何数据。
+
+线程安全的集合
+
+Scala类库提供了六个特质，你可以将它们混入集合，让集合的操作变成同步
+```scala
+SynchronizedBuffer
+SynchronizedMap
+SynchronizedPriorityQueue
+SynchronizedQueue
+SynchronizedSet
+SynchronizedStack
+```
+
+并行集合
+
+par方法长处当前集合的一个并行实现。
+
+par方法返回的并行集合的类型为扩展自ParSeq、ParSet或ParMap特质的类型，所有这些特质都是ParIterable的子类型。
+这些并不是Iterable的子类型，因此你不能将并行集合传递给预期Iterable、Seq、Set或Map的方法。
+你可以用ser方法将并行集合转换回串行的版本
+
+
+### 第十四章 模式匹配和样例类

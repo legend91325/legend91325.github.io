@@ -1,15 +1,15 @@
 ---
-title: "ZooKeeper 分布式过程协同技术详解"
+title: "《ZooKeeper分布式过程协同技术详解》学习笔记"
 layout: post
 date: 2019-01-01 00:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- Java
-- history note
+- zooKeeper
+- learning note
 category: blog
 author: wukong
-description: time
+description: zookeeper learning
 ---
 >以前博客文章，时间点无法追溯，统一放在 2019-01-01 00:00:00。
 
