@@ -633,3 +633,76 @@ par方法返回的并行集合的类型为扩展自ParSeq、ParSet或ParMap特�
 
 
 ### 第十四章 模式匹配和样例类
+
+类型模式
+
+你可以对表达式的类型进行匹配
+```scala
+obj match{
+    case x: Int => x
+    case s: String => Integer.parseInt(s)
+    case _: BigInt => Int.MaxValue
+    case _  => 0
+}
+```
+>匹配发生在运行期，Java虚拟机中泛型的类型信息是被擦掉的。因此你不能用类型来匹配特定的Map类型。
+
+```scala
+//别这样做
+case m: Map[String,Int] => ...
+
+//可以匹配一个通用映射
+case m: Map[_,_] => ...
+
+//但是，对于数组而言元素的类型信息是完好的。你可以匹配到Array[Int]
+```
+
+for表达式中的模式
+
+```scala
+for((k,v) <- System.getProperties())
+    println(k +" -> " +v)
+
+// for 推导式中，失败的匹配将被安静的忽略
+//如下循环将打印出所有值为空白的键，跳过所有其他的键
+for((k,"") <- System.getProperties())
+    println(k)
+```
+
+样例类
+
+样例类是一种特殊的类，它们经过优化以被用于模式匹配。在本例中，我们有两个扩展自常规（非样例）类的样例类
+
+```scala
+abstract class Amount
+
+case class Doller(value: Double) extends Amount
+case class Currency(value: Double, unit: String) extends Amount
+
+//我们可以用模式匹配来匹配到它的类型，并将属性值绑定到变量:
+amt match {
+    case Dollar(v) => "$" + v
+    case Currency(_,u) => "Oh noes, I got " + u
+    case Nothing => ""
+}
+```
+
+密封类
+
+当倪用样例类来做模式匹配是，你可能想让编译器帮你确保你已经列出了所有可能的选择。
+要达到这个目的，你需要将样例类的通用超类声明为sealed
+
+偏函数
+
+被包含在花括号内的一组case语句是一个偏函数----一个并非对所有输入值都有定义的函数。
+它是PartialFunction[A,B]类的一个实例。（A是参数类型，B是返回类型）
+该类有两个方法：apply方法从匹配到的模式计算函数值，而isDefinedAt方法在输入至少屁屁其中一个模式时返回true
+
+```scala
+val f: PartialFunction[Char,Int] = { case '+' => 1; case '-' => -1}
+f('-') // 返回-1 调用f.apply('-')
+f.isDefinedAt('0') //false
+f('0') //抛出MatchError
+```
+> 偏函数表达式必须位于编译器可以推断出返回类型的上下文中。
+当你把它赋值给一个带有类型声明的变量，或者将它作为参数传递时，都符合这个要求。
