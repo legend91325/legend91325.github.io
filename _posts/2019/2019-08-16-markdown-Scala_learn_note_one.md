@@ -706,3 +706,88 @@ f('0') //抛出MatchError
 ```
 > 偏函数表达式必须位于编译器可以推断出返回类型的上下文中。
 当你把它赋值给一个带有类型声明的变量，或者将它作为参数传递时，都符合这个要求。
+
+
+### 第十五章 注解
+
+> 在Scalazhogn ,注解可以影响编译过程。举例来说，@BeanProperty注解将触发getter和setter方法的生成。
+
+尾递归
+
+递归调用有时能被转化成循环，这样能节约栈空间。
+```scala
+object Util{
+   @tailrec def sum(xs: Seq[Int],partial:BigInt): BigInt = if(xs.isEmpty) partial else sum2(sx.tail, xs.head + partial) 
+}
+```
+尽管Scala编译器会尝试使用尾递归优化，单有时候某些不太明显的原因会造成它无法这样做。
+如果你有赖于编译器来帮你去掉递归，则应该给你的方法加上@tailrec注解。
+这样一来，如果编译器无法应用该优化，它就会报错。
+
+Scala 对于消除递归，有一个更加通用的机制叫做“蹦床”。蹦床的实现会执行一个循环，不停地调用函数。
+每一个函数都返回下一个将被调用的函数。
+尾递归在这里是一个特例，每个函数都返回它自己。
+
+Scala有一个TailCalls的工具对象，帮助我们轻松地实现蹦床。
+相互递归的函数返回类型为tailRec[A],要么返回done(result),要么返回tailcall(fun),其中fun是下一个被调用的函数。
+这必须是一个不带额外参数且同样返回TailRec[A]的函数。
+```scala
+import scala.util.control.TailCalls._
+def evenLength(sx:Seq[Int]): TailRec[Boolean] = 
+    if (xs.isEmpty) done(true) else tailcall(oddLength(sx.tail))
+
+def oddLength(xs: Seq[Int]): TailRec[Boolean] = 
+    if (xs.isEmpty) done(false) else tailcall(evenLength(xs.tail))
+```
+
+### 第十六章 XML处理
+
+略过 目前没场景使用
+
+### 第十七章 类型参数
+
+泛型类
+
+和Java或C++一样，类和特质可以带类型参数。在Scala汇总，我们用方括号来定义类型参数，例如：
+
+```scala
+//顶一个一个带有两个类型参数T和S的类。 在类的定义中，你可以用类型参数来定义变量、方法参数、以及返回值的类型。
+calss Pair[T,S] (val first: T, val second: S)
+```
+
+泛型函数
+
+函数和方法也可以带类型参数。
+```scala
+def getMiddle[T](a:Array[T]) = a(a.length/2)
+```
+
+类型变量界定
+
+```scala
+// T是 R的子类 上界
+T <: R 
+
+// T 是R的超类 下界
+T :> R
+```
+
+视图界定
+
+```scala
+calss Pair[T <: Comparable[T]]
+```
+可惜如果你试着new一个Pair(4,2),编译器会抱怨说Int不是Comparable[Int]的子类型。
+和java.lang.Integer包装类型不同，Scala的Int类型并没有实现Comparable。
+不过RichInt实现了Comparable[Int],同时还有一个从Int到RichInt的隐式转换。
+解决方法是有使用“视图界定”，就像这样
+```scala
+class Pair[T <% Comparable[T]]
+```
+<%关系意味着T可以隐式转换成Comparable[T]
+
+上下文界定
+
+视图界定T<%V要求必须存在一个从T到V的隐式转换。
+上下文界定的形式为T:M，其中M是另一个泛型类。
+它要求必须存在一个类型为M[T]的“隐式值”。
