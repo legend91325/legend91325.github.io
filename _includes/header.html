@@ -4,8 +4,9 @@
    or page.title == "Tags"
 %}{% assign showHeader = true %}{% endif %}
 
-<script src="/_includes/js/raphael.min.js"></script>
-<script src="/_includes/js/flowchart.min.js"></script>
+{% if page.mathjax %}
+{% include markdown-enhancements/mathjax.html %}
+{% endif %}
 
 {% if showHeader == true %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
