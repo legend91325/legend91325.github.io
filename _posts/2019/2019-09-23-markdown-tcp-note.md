@@ -10,6 +10,9 @@ tag:
 category: blog
 author: wukong
 description: tcp learning note
+mermaid: true
+highlight: true
+mathjax: true
 ---
 
 # Welcome to StackEdit!
