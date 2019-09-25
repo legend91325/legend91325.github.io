@@ -15,153 +15,106 @@ highlight: true
 mathjax: true
 ---
 
-# Welcome to StackEdit!
+## 写在开头
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+**本文基本上只是复述了，知乎一篇文章，方便自己加深巩固，如果学习，可以直接看原文**
+原文地址：https://www.zhihu.com/search?type=content&q=Tcp%20ip
 
-
-# Files
-
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-
-## Create files and folders
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-
-
-# Synchronization
-
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
-
-# Publication
-
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-$$  x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
-
-
-
-$$
-\left(1+\delta\right)\left(1+\varepsilon\right) = 1+\delta + \varepsilon +\delta\varepsilon \approx 1 +\left(\delta + \varepsilon\right)\notag
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
+## Tcp 三次握手
 
 ```mermaid
 sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
+    participant 客户端
+    participant 服务器端
+    Note left of 客户端: 客户端发送syn报文，<br/>并置发送序号为X
+    客户端->>服务器端: SYN=1,Seq=X
+    Note right of 服务器端:服务器端发送syn、<br/>ack报文<br/>并置发送序号为Y，<br/>再确认序号为X+1
+    服务器端->>客户端: SYN=1,ACK=X+1,Seq=Y
+    Note left of 客户端: 客户端发送ack报文，<br/>并置发送序号为Z,<br/>再去确认序号为Y+1
+    客户端->>服务器端: ACK=Y+1,Seq=Z
 ```
 
-And this will produce a flow chart:
+**三次握手原因**：为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。
+
+已失效连接请求，指的是client发送的请求，在网络上滞留了长时间，本身已无意思，到达服务器端，对这种情况，如果没有最后的三次握手，服务器端把任意连接请求都直接建立连接，会造成一部分资源白白浪费掉，所以为了防止这种情况，服务器端要等待收到确认请求，是个正常连接请求，再建立连接。本质上是解决服务器端资源的考虑。
+
+
+
+## Tcp 四次挥手
 
 ```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+sequenceDiagram
+    participant 主动方
+    participant 被动方
+    Note left of 主动方: 发送Fin,Ack报文，<br/>并置发送序号为X
+    主动方->>被动方: Fin=1,Ack=Z,Seq=X
+    Note right of 被动方:发送Ack报文<br/>并置发送序号为Z，<br/>再确认序号为X+1
+    被动方->>主动方: Ack=X+1,Seq=Z
+    Note right of 被动方:发送Fin,Ack报文，<br/>并置发送序号为Y<br/>再确认序号为X
+    被动方->>主动方: Fin=1,Ack=X,Seq=Y
+    Note left of 主动方: 发送ack报文，<br/>并置发送序号为X,<br/>再确认序号为Y
+    主动方->>被动方: ACK=Y,Seq=Z
 ```
+
+**四次挥手原因**：TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着，当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据；当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的；当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。
+
+**等待2MSL原因**：MSL 报文段最大生存时间，它是任何保温段被丢弃钱在网络内的最大时间。
+
+- 保证TCP协议的全双工连接能够可靠关闭
+- 保证这次谅解的重复数据段从网络中完全消失，防止关闭后，还有数据到达到被动端，造成以为新连接数据包，发生混淆。
+
+## TCP流量控制
+
+滑动窗口机制
+
+分为发送窗口和接收窗口，因为是全双工的，所以两方都会有这两种窗口。
+
+建立连接后，双方分别会接收到对方接收窗口的大小。
+
+发送窗口中的数据分为四个状态
+
+- 已发送已Ack
+
+- 已发送未Ack
+
+- 待发送未Ack
+
+- 未发送未Ack
+
+  如果发送窗口中已发送未Ack大小已经等于对方的接收窗口容量，则不再发送新数据，依次超时重传，陆续收到ack之后再发送新数据。
+
+  可以有效提高吞吐量以及丢包问题。
+
+## TCP拥塞控制
+
+发送方维持一个拥塞窗口 cwnd ( congestion window )的状态变量。拥塞窗口的大小取决于网络的拥塞程度，并且动态地在变化。发送方让自己的发送窗口等于拥塞窗口。
+
+发送方控制拥塞窗口的原则是：只要网络没有出现拥塞，拥塞窗口就再增大一些，以便把更多的分组发送出去。但只要网络出现拥塞，拥塞窗口就减小一些，以减少注入到网络中的分组数。
+
+
+
+**慢开始算法**：
+
+发送数据量的大小，采用逐步增大，防止阻塞网络。
+
+每经过一个传输轮次（往返时间RTT），拥塞窗口 cwnd 就加倍。不过“传输轮次”更加强调：把拥塞窗口cwnd所允许发送的报文段都连续发送出去，并收到了对已发送的最后一个字节的确认。
+
+另，慢开始的“慢”并不是指cwnd的增长速率慢，而是指在TCP开始发送报文段时先设置cwnd=1，使得发送方在开始时只发送一个报文段（目的是试探一下网络的拥塞情况），然后再逐渐增大cwnd。
+
+为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh状态变量。慢开始门限ssthresh的用法如下：
+
+- 当 cwnd < ssthresh 时，使用上述的慢开始算法。
+- 当 cwnd > ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。
+- 当 cwnd = ssthresh 时，既可使用慢开始算法，也可使用拥塞控制避免算法。
+
+**拥塞避免**:
+
+让拥塞窗口cwnd缓慢地增大，即每经过个往返时间RTT发送方的拥塞窗口cwnd加1，而不是加倍。这样拥塞窗口cwnd按线性规律缓慢增长，比慢开始算法的拥塞窗口增长速率缓慢得多。
+
+
+
+无论在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞（其根据就是没有收到确认），就要把慢开始门限ssthresh设置为出现拥塞时的发送 方窗口值的一半（但不能小于2）。然后把拥塞窗口cwnd重新设置为1，执行慢开始算法。
+
+这样做的目的就是要迅速减少主机发送到网络中的分组数，使得发生 拥塞的路由器有足够时间把队列中积压的分组处理完毕
+
+
