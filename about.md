@@ -15,7 +15,7 @@ layout: page
 
 <ul class="skill-list">
 	<li>JAVA -- 并发，动态编程，源码，JVM</li>
-	<li>Python -- 2.7，pandas，numpy</li>
+	<li>Python -- pandas，numpy</li>
 	<li>Scala -- 掌握</li>
 	<li>Mysql，Redis，Mongodb，Hbase，Hadoop</li>
 	<li>Zookeeper,Doubbo,SpringCloud系列，RabbitMq</li>
@@ -46,6 +46,14 @@ layout: page
 	<p>我的Scala入门书籍，希望也能帮助你敲开这扇门</p>
 	</li>
 	<li>
+    <a href="https://book.douban.com/subject/35003794/">Spark权威指南</a>
+    <p>市面上第一版基于Spark2.0的比较权威的书籍了，出版的第二个月就买到手了，内容还行，对我来说算是帮助理解了Spark很多东西</p>
+    </li>
+    <li>
+    <a href="https://book.douban.com/subject/25779298/">利用Python进行数据分析</a>
+    <p>17年当做工具书来用，今年重新深度抠了一遍，对想从事数据处理方面的同学是本很好的入门书</p>
+    </li>
+	<li>
 	<a href="https://book.douban.com/subject/26337727/">算法设计与分析基础</a>
 	<p>想称为一名开发大牛，算法也是必不可少的，这本书对我来说是为数不多好啃的算法书。</p>
 	</li>
@@ -57,4 +65,8 @@ layout: page
 	<a href="https://book.douban.com/subject/4913064/">活着</a>
 	<p>对我来说，生命就是一场未知旅行，不要在意眼前的得失。</p>
 	</li>
+	<li>
+    <a href="https://book.douban.com/subject/33377948/">我是怎样设计飞机的</a>
+    <p>个人感觉，设计飞机的方法论也可以放在团队协作开发上。</p>
+    </li>
 </ul>
