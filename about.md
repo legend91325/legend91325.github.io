@@ -17,7 +17,8 @@ layout: page
 	<li>JAVA -- 并发，动态编程，源码，JVM</li>
 	<li>Python -- pandas，numpy</li>
 	<li>Scala -- 掌握</li>
-	<li>Mysql，Redis，Mongodb，Hbase，Hadoop</li>
+	<li>Spark,Hive,Doris,Hbase</li>
+	<li>Mysql，Redis，Mongodb</li>
 	<li>Zookeeper,Doubbo,SpringCloud系列，RabbitMq</li>
 	<li>Git，Maven，Idea</li>
 	<li>Upsource，Confluence，Jira，Rap</li>
