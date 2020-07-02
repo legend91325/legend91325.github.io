@@ -75,7 +75,7 @@ layout: page
 
 > 第三阶段：2019.06 - 至今
 大数据相关开发，主导并负责 虚拟信用卡业务相关报表数仓建设，数据可视化BI平台选型、搭建、投产
-涉及技术 Spark Kafka maxwell doris Scala python 
+涉及技术 Spark Kafka maxwell hive impala doris Scala python 
 BI可视化报表 ：superset davinci
 
 益动·后台开发·2015.03 - 2016.12
