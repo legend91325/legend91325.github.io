@@ -8,7 +8,7 @@ tag:
 - zooKeeper
 - learning note
 category: blog
-author: wukong
+author: WuKongCoder
 description: zookeeper learning
 ---
 >以前博客文章，时间点无法追溯，统一放在 2019-01-01 00:00:00。

@@ -7,7 +7,7 @@ headerImage: false
 tag:
 - house
 category: blog
-author: wukong
+author: WuKongCoder
 description: find rent house
 mermaid: true
 highlight: true

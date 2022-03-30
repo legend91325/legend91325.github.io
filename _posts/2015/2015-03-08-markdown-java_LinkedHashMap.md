@@ -9,7 +9,7 @@ tag:
 - history note
 - source code
 category: blog
-author: wukong
+author: WuKongCoder
 description: Java linkedHaskMap 
 ---
 

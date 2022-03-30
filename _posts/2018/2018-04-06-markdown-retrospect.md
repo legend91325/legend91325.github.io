@@ -5,9 +5,9 @@ date: 2018-04-06 23:46
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- wukong
+- WuKongCoder
 category: blog
-author: wukong
+author: WuKongCoder
 description: 过去一段时期关于自己技术成长的回顾 
 ---
 

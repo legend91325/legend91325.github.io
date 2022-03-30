@@ -8,7 +8,7 @@ tag:
 - tcp
 - learning note
 category: blog
-author: wukong
+author: WuKongCoder
 description: tcp learning note
 mermaid: true
 highlight: true

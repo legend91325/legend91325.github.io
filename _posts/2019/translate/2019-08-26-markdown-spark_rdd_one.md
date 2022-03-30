@@ -7,7 +7,7 @@ headerImage: false
 tag:
 - spark
 category: blog
-author: wukong
+author: WuKongCoder
 description: RDDs
 ---
 

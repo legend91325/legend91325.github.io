@@ -7,7 +7,7 @@ headerImage: false
 tag:
 - https
 category: blog
-author: wukong
+author: WuKongCoder
 description: understand https
 ---
 

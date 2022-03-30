@@ -8,7 +8,7 @@ tag:
 - nginx
 - history note
 category: blog
-author: wukong
+author: WuKongCoder
 description: nginx
 ---
 

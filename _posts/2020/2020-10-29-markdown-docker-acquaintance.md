@@ -8,7 +8,7 @@ tag:
 - Docker
 - Big Data
 category: blog
-author: wukong
+author: WuKongCoder
 description: Docker 
 ---
 > 花了十天业余时间  基本上走完了这篇教程[Docker for beginners](https://docker-curriculum.com/#introduction)，基本上对docker有了初步的认识，打算写下自己的总结，方便加深理解。

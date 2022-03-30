@@ -7,7 +7,7 @@ headerImage: false
 tag:
 - think
 category: blog
-author: wukong
+author: WuKongCoder
 description: deep in think
 ---
 

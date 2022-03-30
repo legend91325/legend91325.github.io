@@ -8,7 +8,7 @@ tag:
 - scala
 - history note
 category: blog
-author: wukong
+author: WuKongCoder
 description: Scala functions vs methods
 ---
 

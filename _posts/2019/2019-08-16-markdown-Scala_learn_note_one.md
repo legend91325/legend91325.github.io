@@ -8,7 +8,7 @@ tag:
 - scala
 - learning note
 category: blog
-author: wukong
+author: WuKongCoder
 description: Scala learning note
 ---
 

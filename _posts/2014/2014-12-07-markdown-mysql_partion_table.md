@@ -8,7 +8,7 @@ tag:
 - Mysql
 - history note
 category: blog
-author: wukong
+author: WuKongCoder
 description: Mysql 分区 分表
 ---
 
