@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "fd34daaf27cafec6",
+    "type": "split",
+    "children": [
+      {
+        "id": "26cffc1943c06fda",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "191bca4b0b357436",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/daily/2023/One Step.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c85b65782f805e35",
+    "type": "split",
+    "children": [
+      {
+        "id": "d529a628ba03c7d0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "166afcbb142c15fb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "971da36618f3d45f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "390cbe4ee67f9766",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4285e04886856479",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "439e31e4c1492083",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b56dc5eac22133d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10c32317b61992a5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/daily/2023/One Step.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "544aeac72c53b0f9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/daily/2023/One Step.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d8a53bfcb672cb5d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c5c69a684d266d40",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/daily/2023/One Step.md"
+              }
+            }
+          },
+          {
+            "id": "23f6f99fc542d116",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
+    }
+  },
+  "active": "191bca4b0b357436",
+  "lastOpenFiles": [
+    "_posts/daily/2023/One Step.md",
+    "_posts/daily/2023/2023-05-18-flink-sink-aliyun-kafka-corrupt_message.md",
+    "_posts/2023/2023-05-05-flink-keybygroup.md",
+    "assets/blog/2023/flink_kafak_corrupt_message 1.md",
+    "assets/blog/2023/flink_kafak_corrupt_message.md",
+    "_posts/2023/AWS EMR VS ALIYUN EMR.md",
+    "assets/blog/2023/flink_kafka_corrupt_message/aliyun_kafka_diff.png",
+    "assets/blog/2023/flink_kafka_corrupt_message/FireShot Capture 004 - 存储引擎对比 - help.aliyun.com.png",
+    "assets/blog/2023/flink_kafka_corrupt_message",
+    "Pasted image 20230520225730.png",
+    "_posts/daily/2023/2023-05-06-this-week-ai-awsome-article.md",
+    "_posts/2023/2023-04-18-markdown-daily-tools.md",
+    "Untitled 1.canvas",
+    "p.md",
+    "_posts/daily/2023/farewell.md",
+    "_posts/2023/2023-05-07-openai-prompt.md.md",
+    "Pasted image 20230513223835.png",
+    "_posts/2023/2023-04-26-install-centos7-yum.md",
+    "Untitled.canvas",
+    "_posts/2023/配料效果.md",
+    "_posts/2023/Untitled.md",
+    "assets/blog/2023/flink_keybygroup/wechat_flink_state_issue.png",
+    "assets/blog/2023/flink_keybygroup/key-groups.svg",
+    "assets/blog/2023/flink_keybygroup/list-checkpointed.svg",
+    "assets/blog/2023/flink_keybygroup/stateless-stateful-streaming.svg",
+    "assets/blog/2023/flink_keybygroup/flink_keygroup_is_not_in_keygrouprange.png",
+    "assets/blog/2023/flink_keybygroup/flink_keygroup_is_not_in_keygrouprange.jpg",
+    "assets/blog/2023/flink_keybygroup",
+    "_posts/daily/2023/obsidian配置方案.md",
+    "assets/blog/2023/flink_keybygroup.md",
+    "assets/blog/2023/flink_keybygoup",
+    "_posts/2022/2022-03-29-markdown-senior_system_architect.md",
+    "_posts/daily/2023",
+    "_posts/daily",
+    "assets/blog/2023/aws_emr_vs_aliyun_emr/aliyun_emr_serverless_starrocks.png.crdownload",
+    "assets/blog/2023/aws_emr_vs_aliyun_emr/aliyun_on_ack.png.crdownload",
+    "assets/blog/2023/aws_emr_vs_aliyun_emr/aws_emr_on_eks_vs_emr_on_ec2.png.crdownload",
+    "assets/blog/2023/aws_emr_vs_aliyun_emr/aliyun_emr_tech_archpng.png.crdownload",
+    "_posts/2023/《动手学深度学习》课后延伸资料.md",
+    "assets/blog/2023/aws_emr_vs_aliyun_emr/Product-Page-Diagram_Amazon-EMR.803d6adad956ba21ceb96311d15e5022c2b6722b.png.crdownload"
+  ]
+}
