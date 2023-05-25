@@ -123,7 +123,7 @@ flink 状态官方分为两种，operator state 和 keyed state  两种， keyed
 
 
 ### 参考资料
-[# Flink状态的缩放（rescale）与键组（Key Group）设计](https://blog.csdn.net/nazeniwaresakini/article/details/104220138)
-[# FLINK-18637 Key group is not in KeyGroupRange](https://issues.apache.org/jira/secure/AddComment!default.jspa?id=13317605 "Comment on this issue")
-[# A Deep Dive into Rescalable State in Apache Flink](https://flink.apache.org/2017/07/04/a-deep-dive-into-rescalable-state-in-apache-flink/)
-[# Flink 源码阅读笔记（10）- State 管理](https://blog.jrwang.me/2019/flink-source-code-state/)
+[# Flink状态的缩放（rescale）与键组（Key Group）设计](https://blog.csdn.net/nazeniwaresakini/article/details/104220138)  
+[# FLINK-18637 Key group is not in KeyGroupRange](https://issues.apache.org/jira/secure/AddComment!default.jspa?id=13317605 "Comment on this issue")  
+[# A Deep Dive into Rescalable State in Apache Flink](https://flink.apache.org/2017/07/04/a-deep-dive-into-rescalable-state-in-apache-flink/)  
+[# Flink 源码阅读笔记（10）- State 管理](https://blog.jrwang.me/2019/flink-source-code-state/)  
